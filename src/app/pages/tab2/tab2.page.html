@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="ion-no-border">
+    <ion-title>
+      Historial
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="enviarPorCorreo()">
+        <ion-icon color="primary" slot="icon-only" name="paper-plane-outline"></ion-icon>
+        
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-item *ngFor="let dato of dataLocal.guardados" detail (click)="abrirRegistro(dato)">
+      <ion-label>
+        <h1>{{dato.text}}</h1>
+        <p>{{dato.created | date: 'medium'}}</p>
+      
+      </ion-label>
+      <ion-icon slot="start" [name]="dato.icon"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
