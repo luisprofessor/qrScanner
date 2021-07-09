@@ -15,7 +15,9 @@ export class Tab2Page implements OnInit{
     
   }
 
-  enviarPorCorreo(){}
+  enviarPorCorreo(){
+    this.dataLocal.enviarCorreo();
+  }
   abrirRegistro(registro:Registro){
     this.dataLocal.abrirRegistro(registro);
   }
